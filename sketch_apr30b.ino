@@ -1,10 +1,8 @@
-const int ledPin =  LED_BUILTIN;// the number of the LED pin
+const int ledPin =  LED_BUILTIN;
 
-int ledState = LOW;             // ledState used to set the LED
-unsigned long lastLEDblink = 0;        // will store last time LED was updated
-
-long interval = 1000;           // interval at which to blink (milliseconds)
-
+int ledState = LOW;             
+unsigned long lastLEDblink = 0;
+long interval = 1000;
 int potPin = A0;
 long pot = 0;
 
