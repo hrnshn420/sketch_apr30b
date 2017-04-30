@@ -1,12 +1,8 @@
-// constants won't change. Used here to set a pin number :
 const int ledPin =  LED_BUILTIN;// the number of the LED pin
 
-// Variables will change :
 int ledState = LOW;             // ledState used to set the LED
-
 unsigned long lastLEDblink = 0;        // will store last time LED was updated
 
-// constants won't change :
 long interval = 1000;           // interval at which to blink (milliseconds)
 
 int potPin = A0;
@@ -20,8 +16,6 @@ void setup() {
   pinMode(switchPin, INPUT_PULLUP);
   
 }
-
-
 
 void loop() {
   
