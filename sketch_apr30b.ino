@@ -11,40 +11,38 @@ long pot = 0;
 int switchPin = 8;
 
 void setup() {
-  // set the digital pin as output:
+
   pinMode(ledPin, OUTPUT);
   pinMode(switchPin, INPUT_PULLUP);
-  
+
 }
 
 void loop() {
-  
-  
-  if (digitalRead(switchPin) == LOW){
-  blink();
-  }else{
+
+
+  if (digitalRead(switchPin) == LOW) {
+    blink();
+  } else {
     digitalWrite(ledPin, LOW);
   }
 }
 
 void blink() {
-  
+
   unsigned long newLEDblink = millis();
-  
+
   pot = analogRead(potPin);
   interval = pot;
+
   if (newLEDblink - lastLEDblink >= interval) {
-    // save the last time you blinked the LED
+
     lastLEDblink = newLEDblink;
 
-    // if the LED is off turn it on and vice-versa:
     if (ledState == LOW && interval >= 20) {
       ledState = HIGH;
     } else {
       ledState = LOW;
     }
-
-    // set the LED with the ledState of the variable:
     digitalWrite(ledPin, ledState);
   }
 }
